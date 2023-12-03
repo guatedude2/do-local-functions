@@ -1,0 +1,47 @@
+{
+  "name": "node-docker-api",
+  "version": "1.1.22",
+  "description": "Docker Remote API driver for node",
+  "main": "./lib/docker",
+  "typings": "./lib/docker",
+  "scripts": {
+    "watch-test": "nodemon --watch build --watch test --exec 'npm run test'",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json 'src/**/*.ts'",
+    "test": "chmod +x test.sh; ./test.sh",
+    "gendoc": "typedoc --out docs src",
+    "build": "tsc --outDir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinCB/docker-api.git"
+  },
+  "keywords": [
+    "docker",
+    "api",
+    "node"
+  ],
+  "author": "AgustinCB",
+  "license": "\tGPL-2.0",
+  "bugs": {
+    "url": "https://github.com/AgustinCB/docker-api/issues"
+  },
+  "homepage": "https://github.com/AgustinCB/docker-api#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "ava": "^0.17.0",
+    "brace-expansion": "^1.1.7",
+    "chai": "^3.5.0",
+    "jsdox": "^0.4.10",
+    "marked": "0.3.9",
+    "mocha": "^2.5.3",
+    "mustache": "2.2.1",
+    "nodemon": "^1.11.0",
+    "tslint": "^4.4.2",
+    "typedoc": "^0.6.0",
+    "typescript": "^2.1.6"
+  },
+  "dependencies": {
+    "docker-modem": "^0.3.1",
+    "memorystream": "^0.3.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "do-local-functions",
+  "version": "0.0.1",
+  "bin": {
+    "local-functions": "./local-functions.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "node-docker-api": "^1.1.22",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0"
+  }
+}
