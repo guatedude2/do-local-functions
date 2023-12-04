@@ -123,7 +123,7 @@ function main(argv) {
     for (const action of actions) {
       const actionRoute = `/${pkg.name}/${action.name}`;
       const sourcePath = `packages/${pkg.name}/${action.name}`;
-      if (action.runtime !== 'nodejs:default') {
+      if (!action.runtime.startsWith('nodejs:')) {
         console.log(`unsupported runtime ${action.runtime}`);
         continue;
       }
