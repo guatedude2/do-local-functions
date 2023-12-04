@@ -43,20 +43,25 @@ const buildFunction = (route) => {
         if (error) {
           console.log(`error building ${route.route}`);
           console.error(stdout);
-          isBuilding = false;
+          setTimeout(() => {
+            isBuilding = false;
+          }, 500);
           return;
         }
         console.log(`built ${route.route}`);
-        isBuilding = false;
+        setTimeout(() => {
+          isBuilding = false;
+        }, 500);
       }
     );
   };
 
   build();
-  fs.watch(route.path, { recursive: true }, () => {
+  fs.watch(route.path, { recursive: true }, (file, type) => {
     if (isBuilding) {
       return;
     }
+    console.log(`file ${type} detected ${file}`);
     build();
   });
 };
@@ -85,7 +90,6 @@ const runFunction = async (route, params, res) => {
         console.log(line);
       }
 
-      console.log(stderr);
       res.statusCode = result.statusCode ?? 200;
       res.end(JSON.stringify(result.body));
       resolve();
