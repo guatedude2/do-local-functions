@@ -1,6 +1,6 @@
 {
   "name": "do-local-functions",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "bin": {
     "local-functions": "./local-functions.js"
   },
